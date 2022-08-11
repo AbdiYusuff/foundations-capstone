@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablespoons and Teaspoons Converter</title>
+<link href="conversion.css" rel="stylesheet">
+</head>
+<body>
+
+    <div id="google_translate_element"></div>
+<div class="flex-box">
+
+                <script type="text/javascript">
+                function googleTranslateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                }
+                </script>
+
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        
+    <div>
+        <section class="header">
+            <h1>Tablespoons and Teaspoons</h1>
+        </section>
+    </div>
+<div class="conversion-boxes">
+    <div>
+
+        <section class="tsp">
+            <p>Type a value in the Teaspoon field to convert the value Tablespoon(s):</p>
+
+            <p>
+            <label>Teaspoon</label>
+            <input id="inputTsp" type="number" placeholder="Teaspoon" oninput="TpsConverter(this.value)" onchange="TpsConverter(this.value)">
+            </p>
+
+            <p>Tablespoon(s): <span id="outputTbsp"></span></p>
+
+        </section>
+    </div>
+    <div>
+        <section class="tbsp">
+            <p>Type a value in the Tablespoon field to convert the value to Teaspoon(s):</p>
+
+            <p>
+            <label>Tablespoon</label>
+            <input id="inputTbsp" type="number" placeholder="Tablespoon" oninput="TbspConverter(this.value)" onchange="TbspConverter(this.value)">
+            </p>
+
+            <p>Teaspoon(s): <span id="outputTsp"></span></p>
+        </section>
+    </div>
+
+</div>
+    <div class="img-text-container">
+        <section class="image-container">
+            <section id="imageHolder"> </section>
+            <button id="picBtn"> Remember Conversion For Life! </button>
+        </section>
+    </div>
+    <div>
+        <section class="text-container">
+            <button id="textParagraphBtn"> Wait....What is this Picture? </button>
+            <section id="textHolder"> </section>
+
+        </section>
+
+<script src="conversion.js"> </script>
+<script src="../node_modules/axios/dist/axios.min.js">
+
+</script>
+</body>
+</html>
+

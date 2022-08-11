@@ -2,36 +2,19 @@ const express = require('express');
 const app = express();
 const cors = require('cors')
 
-
 app.use(cors())
 app.use(express.json());
 
-const axios = require('axios');
+const {getTextParagraph} = require('./controller')
 
-async function createImage() {
-  const payload = { html: "<div>Test</div>",
-  css: "div { background-color: blue; }" };
+app.get("/api/image",(req, res) => {
+    const images = ['https://www.wikihow.com/images/thumb/d/df/Measure-a-Tablespoon-Step-6.jpg/aid9636661-v4-728px-Measure-a-Tablespoon-Step-6.jpg.webp']
+        res.status(200).send(images)
+    })
 
-  let headers = { auth: {
-    username: 'user-id',
-    password: 'api-key'
-  },
-  headers: {
-    'Content-Type': 'application/json'
-  }
-  }
-  try {
-    const response = await axios.post('https://hcti.io/v1/image', JSON.stringify(payload), headers);
-    console.log(response.data.url);
-  } catch (error) {
-    console.error(error);
-  }
-}
+app.get("/api/textParagraph", getTextParagraph);
+app.post("/api/textParagraph", getTextParagraph);
 
-createImage();
-
-
-
-pp.listen(5050, () => {
+app.listen(5050, () => {
     console.log('listening on port 5050')
 })
